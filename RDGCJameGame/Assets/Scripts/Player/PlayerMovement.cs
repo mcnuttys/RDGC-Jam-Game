@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
     private float verticalSpeed;
     public GameObject enemy;
     public Vector3 previousPosition;
+    public bool moving;
 
     public float movementSpeed = 3;
     public float jumpSpeed = 3;
@@ -17,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        moving = false;
         cc = GetComponent<CharacterController>();
     }
 
@@ -31,6 +33,15 @@ public class PlayerMovement : MonoBehaviour
         {
             verticalSpeed = jumpSpeed;
         }
+        if(direction.magnitude>0)
+        {
+            moving = true;
+        }
+        else
+        {
+            moving = false;
+        }
+
     }
 
     void FixedUpdate()
