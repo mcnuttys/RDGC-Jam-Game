@@ -6,11 +6,10 @@ public class Footprints : MonoBehaviour
 {
     public GameObject footprint;
     public double timer;
-    public double maxTime;
+    public double maxTime = 1;
     // Start is called before the first frame update
     void Start()
     {
-        maxTime = 1;
     }
 
     // Update is called once per frame
