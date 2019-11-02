@@ -24,6 +24,10 @@ public class UIManager : MonoBehaviour
     //Panels
     [SerializeField]
     private GameObject howPanel;
+    [SerializeField]
+    private GameObject vicPanel;
+    [SerializeField]
+    private GameObject deathPanel;
 
 #pragma warning enable
 
@@ -43,6 +47,8 @@ public class UIManager : MonoBehaviour
         howText.SetActive(false);
         exitText.SetActive(false);
         howPanel.SetActive(false);
+        vicPanel.SetActive(false);
+        deathPanel.SetActive(false);
     }
 
     // Update is called once per frame
@@ -67,7 +73,7 @@ public class UIManager : MonoBehaviour
     //Click Events
     public void Play()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(1);
     }
 
     //How to button related methods
@@ -120,7 +126,7 @@ public class UIManager : MonoBehaviour
     }
 
     public void ToMain()
-   {
+    {
         SceneManager.LoadScene(0);
     }
 
