@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 631060841}
   - component: {fileID: 631060842}
   m_Layer: 8
-  m_Name: Spot Light
+  m_Name: MirrorLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -278,7 +278,7 @@ GameObject:
   - component: {fileID: 1238216552}
   - component: {fileID: 1238216553}
   m_Layer: 8
-  m_Name: Point Light
+  m_Name: LanternLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
