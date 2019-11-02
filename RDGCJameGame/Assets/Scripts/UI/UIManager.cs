@@ -68,6 +68,7 @@ public class UIManager : MonoBehaviour
     //Click Events
     public void Play()
     {
+        Cursor.lockState = CursorLockMode.Locked;
         SceneManager.LoadScene(1);
     }
 
