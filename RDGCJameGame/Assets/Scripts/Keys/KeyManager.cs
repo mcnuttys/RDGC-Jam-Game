@@ -5,7 +5,7 @@ using UnityEngine;
 public class KeyManager : MonoBehaviour
 {
     public int keyCount;
-    bool win;
+    public bool win;
 
     // Start is called before the first frame update
     void Start()

@@ -61,7 +61,7 @@ public class PlayerMovement : MonoBehaviour
         if(collision.gameObject == enemy)
         {
             // play spooky sound
-            //SceneManager.LoadScene(3); (dead screen)
+            SceneManager.LoadScene(3); //dead screen
         }
     }
 }
