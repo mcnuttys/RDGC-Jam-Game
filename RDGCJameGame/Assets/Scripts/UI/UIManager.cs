@@ -2,12 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
+#pragma warning disable
+
     //Variables
-    public GameObject[] collectImage;
-    public bool[] collectTest;
+    private KeyManager keyManager;
+    public Image[] collectImage;
+    public GameObject player;
 
     //Text related gameObjects
     [SerializeField]
@@ -21,9 +25,20 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     private GameObject howPanel;
 
+#pragma warning enable
+
     // Start is called before the first frame update
     void Start()
     {
+        //Sets the initial state of the keys
+        keyManager = player.GetComponent<KeyManager>();
+
+        for(int i = 0; i < collectImage.Length; i++)
+        {
+            collectImage[i].color = Color.red;
+        }
+
+        //Set initial screens
         playText.SetActive(false);
         howText.SetActive(false);
         exitText.SetActive(false);
@@ -111,28 +126,55 @@ public class UIManager : MonoBehaviour
 
     void UpdateCollect()
     {
-        //Activates the first collectible
-        if (collectTest != null && collectTest[0])
+        //No keys collected
+        if(keyManager.keyCount == 0)
         {
-            collectImage[0].SetActive(true);
+            for (int i = 0; i < collectImage.Length; i++)
+            {
+                collectImage[i].color = Color.red;
+            }
         }
-
-        //Activates the second collectible
-        if (collectTest != null && collectTest[1])
+        //One key collected
+        else if(keyManager.keyCount == 1)
         {
-            collectImage[1].SetActive(true);
+            collectImage[0].color = Color.white;
+
+            for (int i = 1; i < collectImage.Length; i++)
+            {
+                collectImage[i].color = Color.red;
+            }
         }
-
-        //Activates the third collectible
-        if (collectTest != null && collectTest[2])
+        //Two keys collected
+        else if(keyManager.keyCount == 2)
         {
-            collectImage[2].SetActive(true);
+            for(int i = 0; i < 2; i++)
+            {
+                collectImage[i].color = Color.white;
+            }
+            for (int i = 2; i < collectImage.Length; i++)
+            {
+                collectImage[i].color = Color.red;
+            }
         }
-
-        //Activates the fourth collectible
-        if (collectTest != null && collectTest[3])
+        //Three keys collected
+        else if(keyManager.keyCount == 3)
         {
-            collectImage[3].SetActive(true);
+            for (int i = 0; i < 3; i++)
+            {
+                collectImage[i].color = Color.white;
+            }
+            for (int i = 3; i < collectImage.Length; i++)
+            {
+                collectImage[i].color = Color.red;
+            }
+        }
+        //Four keys collected
+        else if(keyManager.keyCount == 4)
+        {
+            for (int i = 0; i < collectImage.Length; i++)
+            {
+                collectImage[i].color = Color.white;
+            }
         }
     }
 }

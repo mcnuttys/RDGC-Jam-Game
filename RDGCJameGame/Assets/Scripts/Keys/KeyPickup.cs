@@ -11,7 +11,7 @@ public class KeyPickup : MonoBehaviour
     void Start()
     {
         pickup = false;
-        player = GameObject.FindGameObjectWithTag("Character");
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
@@ -20,9 +20,9 @@ public class KeyPickup : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider col)
     {
-        if (collision.gameObject == player)
+        if (col.gameObject == player)
         {
             player.GetComponent<KeyManager>().keyCount++;
             Destroy(gameObject);
