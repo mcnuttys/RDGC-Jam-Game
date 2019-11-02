@@ -48,7 +48,8 @@ public class UIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        UpdateCollect();
+        if(player != null)
+            UpdateCollect();
     }
 
     //Play button related methods
