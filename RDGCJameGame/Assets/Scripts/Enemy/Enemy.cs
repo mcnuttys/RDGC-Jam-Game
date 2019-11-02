@@ -22,7 +22,7 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(GetComponent<MeshRenderer>().isVisible)
+        if(GetComponentInChildren<MeshRenderer>().isVisible)
         {
             Debug.DrawRay(transform.position, player.position - transform.position, Color.red);
 
