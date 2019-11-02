@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 2055423132478333466, guid: b730d2e48fcfd314bb58cd7fcfc87246,
         type: 3}
       propertyPath: m_Name
-      value: FootPrint
+      value: FootPrintEnemy
       objectReference: {fileID: 0}
     - target: {fileID: 5107809835376181086, guid: b730d2e48fcfd314bb58cd7fcfc87246,
         type: 3}
@@ -67,5 +67,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4079417939355995954, guid: b730d2e48fcfd314bb58cd7fcfc87246,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 80ac4754b8534174fa1fdb3666034519, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b730d2e48fcfd314bb58cd7fcfc87246, type: 3}
