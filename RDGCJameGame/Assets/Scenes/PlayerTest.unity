@@ -149,20 +149,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a952fe943faf8a46932ef6cac4c2dee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maze:
-  - 11111111
-  - 10000001
-  - 10000001
-  - 10000001
-  - 10000001
-  - 10000001
-  - 10000001
-  - 10000001
-  - 10000001
-  - 11111111
   wallWidth: 4
   wallLength: 4
   wallSection: {fileID: 8144112843390474963, guid: 02ff947f7bfb0c0488df6e6bb469f9fe,
+    type: 3}
+  wallWithLampSection: {fileID: 8144112843390474963, guid: 02ff947f7bfb0c0488df6e6bb469f9fe,
     type: 3}
 --- !u!4 &865692373
 Transform:

@@ -48,6 +48,7 @@ public class MazeGeneration : MonoBehaviour
     public float wallLength = 1f;
 
     public GameObject wallSection;
+    public GameObject wallWithLampSection;
 
     // Start is called before the first frame update
     void Start()
@@ -75,7 +76,9 @@ public class MazeGeneration : MonoBehaviour
                     Vector3 wallPos = new Vector3((width-x) * wallWidth, 0, z * wallLength);
 
                     // Instantiate the wall section.
-                    GameObject wall = Instantiate(wallSection, wallPos, Quaternion.identity, transform);
+                    GameObject objToCreate = (Random.Range(0, 100) > 20) ? wallSection : wallWithLampSection;
+
+                    GameObject wall = Instantiate(objToCreate, wallPos, Quaternion.identity, transform);
                     wall.transform.name = wallPos.ToString();
                 }
             }
