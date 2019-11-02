@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
     private CharacterController cc;
     private Vector3 direction;
     private float verticalSpeed;
+    public GameObject enemy;
 
     public float movementSpeed = 3;
     public float jumpSpeed = 3;
@@ -40,5 +42,14 @@ public class PlayerMovement : MonoBehaviour
 
         move *= Time.deltaTime;
         cc.Move(move);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject == enemy)
+        {
+            // play spooky sound
+            //SceneManager.LoadScene(3); (dead screen)
+        }
     }
 }
