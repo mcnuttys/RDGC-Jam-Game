@@ -23,7 +23,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        direction = transform.rotation * new Vector3(Input.GetAxis("Horizontal"), 0, (Input.GetAxis("Vertical") > 0) ? Input.GetAxis("Vertical") : 0);
+        direction = transform.rotation * new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
         if (direction.magnitude > 1)
             direction = direction.normalized;
 

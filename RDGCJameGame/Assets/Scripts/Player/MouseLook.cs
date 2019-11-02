@@ -18,6 +18,7 @@ public class MouseLook : MonoBehaviour
 
     public Vector2 minMaxX = new Vector2(-360, 360);
     public Vector2 minMaxY = new Vector2(-80, 80);
+    public bool lockMouse = true;
 
     private float xRot;
     private float yRot;
@@ -31,6 +32,19 @@ public class MouseLook : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(lockMouse)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        } else
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+            lockMouse = !lockMouse;
+
         switch(lookType)
         {
             case LookType.MouseX:
