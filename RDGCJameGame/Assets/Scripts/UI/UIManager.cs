@@ -9,10 +9,24 @@ public class UIManager : MonoBehaviour
     public GameObject[] collectImage;
     public bool[] collectTest;
 
+    //Text related gameObjects
+    [SerializeField]
+    private GameObject playText;
+    [SerializeField]
+    private GameObject howText;
+    [SerializeField]
+    private GameObject exitText;
+
+    //Panels
+    [SerializeField]
+    private GameObject howPanel;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        playText.SetActive(false);
+        howText.SetActive(false);
+        exitText.SetActive(false);
     }
 
     // Update is called once per frame
@@ -21,11 +35,64 @@ public class UIManager : MonoBehaviour
         UpdateCollect();
     }
 
+    //Play button related methods
+
+    //Hover Events
+    public void OnHoverPlay()
+    {
+        playText.SetActive(true);
+    }
+
+    public void OffHoverPlay()
+    {
+        playText.SetActive(false);
+    }
+
+    //Click Events
     public void Play()
     {
         SceneManager.LoadScene(2);
     }
 
+    //How to button related methods
+
+        //Hover Events
+    public void OnHoverHow()
+    {
+        howText.SetActive(true);
+    }
+
+    public void OffHoverHow()
+    {
+        howText.SetActive(false);
+    }
+
+    //Click Events
+    public void HowClick()
+    {
+
+    }
+
+    //Exit button related methods
+
+    //Hover Events
+    public void OnHoverExit()
+    {
+        exitText.SetActive(true);
+    }
+
+    public void OffHoverExit()
+    {
+        exitText.SetActive(false);
+    }
+
+    //Click Events
+    public void ExitClick()
+    {
+        Application.Quit();
+    }
+
+    //In-game Navigation
     public void ToMain()
    {
         SceneManager.LoadScene(0);
