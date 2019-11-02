@@ -34,13 +34,13 @@ public class MouseLook : MonoBehaviour
         switch(lookType)
         {
             case LookType.MouseX:
-                xRot += Input.GetAxis("Mouse X");
+                xRot += Input.GetAxis("Mouse X")*sensitivityX;
                 //xRot = Mathf.Clamp(xRot, minMaxX.x, minMaxX.y);
 
                 transform.localRotation = Quaternion.Euler(0, xRot, 0);
                 break;
             case LookType.MouseY:
-                yRot += Input.GetAxis("Mouse Y");
+                yRot += Input.GetAxis("Mouse Y")*sensitivityY;
                 yRot = Mathf.Clamp(yRot, minMaxY.x, minMaxY.y);
 
                 transform.localRotation = Quaternion.Euler(-yRot, 0, 0);
