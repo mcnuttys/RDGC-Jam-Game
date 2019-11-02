@@ -10,7 +10,7 @@ public class LampScript : MonoBehaviour
     public float visibilityRange = 25f;
     public Bounds checkBox;
     public GameObject lanternObject;
-    public GameObject light;
+    public GameObject lightObject;
     public Vector2 flickerTimerRange;
     public Vector2 offTime;
 
@@ -38,13 +38,13 @@ public class LampScript : MonoBehaviour
 
         if(flickerTimer <= 0)
         {
-            light.SetActive(false);
+            lightObject.SetActive(false);
             flickerTimer = Random.Range(flickerTimerRange.x, flickerTimerRange.y);
         }
 
         if (flickerTimer < Random.Range(0, Random.Range(offTime.x, offTime.y)))
         {
-            light.SetActive(true);
+            lightObject.SetActive(true);
         }
 
         if (flickerTimer > 0)
