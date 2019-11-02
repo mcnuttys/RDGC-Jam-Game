@@ -76,7 +76,7 @@ public class MazeGeneration : MonoBehaviour
                     Vector3 wallPos = new Vector3((width-x) * wallWidth, 0, z * wallLength);
 
                     // Instantiate the wall section.
-                    GameObject objToCreate = (Random.Range(0, 100) > 20) ? wallSection : wallWithLampSection;
+                    GameObject objToCreate = (Random.Range(0, 100) > 10) ? wallSection : wallWithLampSection;
 
                     GameObject wall = Instantiate(objToCreate, wallPos, Quaternion.identity, transform);
                     wall.transform.name = wallPos.ToString();
