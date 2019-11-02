@@ -7,6 +7,7 @@ public class Footprints : MonoBehaviour
     public GameObject footprint;
     public double timer;
     public double maxTime = 1;
+    public GameObject parent;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +19,7 @@ public class Footprints : MonoBehaviour
         if(timer>maxTime)
         {
             timer = 0;
-            Instantiate(footprint, new Vector3(transform.position.x, 1 ,transform.position.z), transform.rotation);
+            Instantiate(footprint, new Vector3(transform.position.x, 1 ,transform.position.z), transform.rotation, parent.transform);
             //  make walking sound
         }
         else
