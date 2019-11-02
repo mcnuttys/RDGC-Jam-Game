@@ -11,4 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PlayerTest.unity
     guid: aefbd6ba6466a5b4b9f8221bea01615c
+  - enabled: 1
+    path: Assets/Scenes/VictoryMenu.unity
+    guid: be634154aea41a744a2a4d289807f9cc
+  - enabled: 1
+    path: Assets/Scenes/DeathMenu.unity
+    guid: ea6a2e44d15cc4e479964def6698a858
   m_configObjects: {}
