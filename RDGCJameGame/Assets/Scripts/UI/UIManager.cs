@@ -24,10 +24,6 @@ public class UIManager : MonoBehaviour
     //Panels
     [SerializeField]
     private GameObject howPanel;
-    [SerializeField]
-    private GameObject vicPanel;
-    [SerializeField]
-    private GameObject deathPanel;
 
 #pragma warning enable
 
@@ -47,8 +43,6 @@ public class UIManager : MonoBehaviour
         howText.SetActive(false);
         exitText.SetActive(false);
         howPanel.SetActive(false);
-        vicPanel.SetActive(false);
-        deathPanel.SetActive(false);
     }
 
     // Update is called once per frame
