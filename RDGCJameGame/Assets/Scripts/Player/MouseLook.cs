@@ -35,7 +35,7 @@ public class MouseLook : MonoBehaviour
         {
             case LookType.MouseX:
                 xRot += Input.GetAxis("Mouse X");
-                xRot = Mathf.Clamp(xRot, minMaxX.x, minMaxX.y);
+                //xRot = Mathf.Clamp(xRot, minMaxX.x, minMaxX.y);
 
                 transform.localRotation = Quaternion.Euler(0, xRot, 0);
                 break;
