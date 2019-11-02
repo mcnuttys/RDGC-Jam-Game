@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 direction;
     private float verticalSpeed;
     public GameObject enemy;
+    public Vector3 previousPosition;
 
     public float movementSpeed = 3;
     public float jumpSpeed = 3;
