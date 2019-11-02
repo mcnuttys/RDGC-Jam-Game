@@ -142,7 +142,7 @@ MonoBehaviour:
   lanternObject: {fileID: 1917484720550253982}
   light: {fileID: 3525538013039633167}
   flickerTimerRange: {x: 1.5, y: 5}
-  offTime: 1
+  offTime: {x: 0.1, y: 1}
 --- !u!1 &917741138297631162
 GameObject:
   m_ObjectHideFlags: 0
@@ -324,7 +324,7 @@ MonoBehaviour:
   lanternObject: {fileID: 8339818945933778288}
   light: {fileID: 6470970283842513889}
   flickerTimerRange: {x: 1.5, y: 5}
-  offTime: 1
+  offTime: {x: 0.1, y: 1}
 --- !u!1 &2063927539797615708
 GameObject:
   m_ObjectHideFlags: 0
@@ -558,7 +558,7 @@ MonoBehaviour:
   lanternObject: {fileID: 1087801150516057850}
   light: {fileID: 2695924958847787115}
   flickerTimerRange: {x: 1.5, y: 5}
-  offTime: 1
+  offTime: {x: 0.1, y: 1}
 --- !u!1 &8281928099690734346
 GameObject:
   m_ObjectHideFlags: 0
@@ -610,7 +610,7 @@ MonoBehaviour:
   lanternObject: {fileID: 1660736296703983389}
   light: {fileID: 4430806226067868044}
   flickerTimerRange: {x: 1.5, y: 5}
-  offTime: 1
+  offTime: {x: 0.1, y: 1}
 --- !u!1 &8873795980405265740
 GameObject:
   m_ObjectHideFlags: 0
