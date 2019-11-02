@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
+#pragma warning disable
+
     //Variables
     public GameObject[] collectImage;
     public bool[] collectTest;
@@ -20,6 +22,8 @@ public class UIManager : MonoBehaviour
     //Panels
     [SerializeField]
     private GameObject howPanel;
+
+#pragma warning enable
 
     // Start is called before the first frame update
     void Start()
