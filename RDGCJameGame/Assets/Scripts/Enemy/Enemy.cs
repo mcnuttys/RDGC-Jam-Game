@@ -9,6 +9,7 @@ public class Enemy : MonoBehaviour
     private Transform player;
 
     public float updateTargetTimer = 3f;
+    public float movementSpeed = 1.5f;
     private float timer;
 
     // Start is called before the first frame update
@@ -21,6 +22,15 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(GetComponent<MeshRenderer>().isVisible)
+        {
+            nav.speed = 0f;
+        }
+        else
+        {
+            nav.speed = movementSpeed;
+        }
+
         if (timer <= 0)
         {
             nav.SetDestination(player.position);
