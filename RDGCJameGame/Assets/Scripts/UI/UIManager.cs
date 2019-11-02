@@ -27,6 +27,7 @@ public class UIManager : MonoBehaviour
         playText.SetActive(false);
         howText.SetActive(false);
         exitText.SetActive(false);
+        howPanel.SetActive(false);
     }
 
     // Update is called once per frame
@@ -70,7 +71,7 @@ public class UIManager : MonoBehaviour
     //Click Events
     public void HowClick()
     {
-
+        howPanel.SetActive(true);
     }
 
     //Exit button related methods
@@ -93,6 +94,16 @@ public class UIManager : MonoBehaviour
     }
 
     //In-game Navigation
+    public void ToHow()
+    {
+        howPanel.SetActive(true);
+    }
+
+    public void BackToMain()
+    {
+        howPanel.SetActive(false);
+    }
+
     public void ToMain()
    {
         SceneManager.LoadScene(0);
