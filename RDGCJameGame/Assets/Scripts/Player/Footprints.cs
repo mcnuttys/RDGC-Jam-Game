@@ -5,7 +5,6 @@ using UnityEngine;
 public class Footprints : MonoBehaviour
 {
     public GameObject footprint;
-    public GameObject player;
     public double timer;
     public double maxTime;
     // Start is called before the first frame update
@@ -20,7 +19,7 @@ public class Footprints : MonoBehaviour
         if(timer>maxTime)
         {
             timer = 0;
-            Instantiate(footprint, player.transform);
+            Instantiate(footprint, new Vector3(transform.position.x, 1 ,transform.position.z), transform.rotation);
             //  make walking sound
         }
         else
