@@ -3174,7 +3174,7 @@ PrefabInstance:
     - target: {fileID: 5304811026390363493, guid: 1e4d42ac73c763444a04a3116b2379de,
         type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 5304811026390363493, guid: 1e4d42ac73c763444a04a3116b2379de,
         type: 3}
@@ -11115,7 +11115,7 @@ Transform:
   - {fileID: 335505670}
   - {fileID: 212783755}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 180, y: 0, z: 0}
 --- !u!1 &200434772
 GameObject:
@@ -38815,8 +38815,6 @@ MonoBehaviour:
   howText: {fileID: 0}
   exitText: {fileID: 0}
   howPanel: {fileID: 0}
-  vicPanel: {fileID: 0}
-  deathPanel: {fileID: 0}
 --- !u!4 &744561391
 Transform:
   m_ObjectHideFlags: 0
