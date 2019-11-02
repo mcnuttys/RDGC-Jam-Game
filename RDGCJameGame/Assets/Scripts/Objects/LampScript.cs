@@ -12,7 +12,7 @@ public class LampScript : MonoBehaviour
     public GameObject lanternObject;
     public GameObject light;
     public Vector2 flickerTimerRange;
-    public float offTime = 1f;
+    public Vector2 offTime;
 
     private float flickerTimer;
 
@@ -38,13 +38,13 @@ public class LampScript : MonoBehaviour
 
         if(flickerTimer <= 0)
         {
-            light.SetActive(true);
+            light.SetActive(false);
             flickerTimer = Random.Range(flickerTimerRange.x, flickerTimerRange.y);
         }
 
-        if (flickerTimer < Random.Range(0,offTime))
+        if (flickerTimer < Random.Range(0, Random.Range(offTime.x, offTime.y)))
         {
-            light.SetActive(false);
+            light.SetActive(true);
         }
 
         if (flickerTimer > 0)
