@@ -24,7 +24,13 @@ public class Enemy : MonoBehaviour
     {
         if(GetComponent<MeshRenderer>().isVisible)
         {
-            nav.speed = 0f;
+            Debug.DrawRay(transform.position, player.position - transform.position, Color.red);
+
+            RaycastHit hit;
+            Physics.Raycast(transform.position, player.position - transform.position, out hit);
+
+            if (hit.transform == player)
+                nav.speed = 0f;
         }
         else
         {
