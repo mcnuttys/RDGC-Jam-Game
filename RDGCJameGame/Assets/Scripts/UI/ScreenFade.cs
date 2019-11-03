@@ -9,6 +9,7 @@ public class ScreenFade : MonoBehaviour
     public float fadeSpeed = 0.5f;
     public Image fade;
     public Color finalColor;
+    public Color startColor;
 
     private bool fading;
     private int sceneToLoad;
@@ -24,6 +25,10 @@ public class ScreenFade : MonoBehaviour
             {
                 CompleteFade(sceneToLoad);
             }
+        }
+        else
+        {
+            fade.color = Color.Lerp(fade.color, startColor, Time.deltaTime * fadeSpeed);
         }
     }
 
