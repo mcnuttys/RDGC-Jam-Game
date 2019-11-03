@@ -13,6 +13,12 @@ public class CameraSway : MonoBehaviour
     float swaySpeedY = .00075f;
     public GameObject player;
 
+    [SerializeField]
+    private Footstep footstepScript;
+    // Exists to make sure the footstep 
+    // sound only plays once not twice
+    private bool isMirror;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +26,9 @@ public class CameraSway : MonoBehaviour
         right = false;
         up = false;
         position = gameObject.transform.position;
+        
+        // don't change the name of the object please
+        isMirror = this.name == "MirrorHolder";
     }
 
     // Update is called once per frame
@@ -53,6 +62,10 @@ public class CameraSway : MonoBehaviour
                         timer = 0;
                         up = true;
                         right = true;
+
+                        // footstep sounds here
+                        if (isMirror)
+                            footstepScript.walking = true;
                     }
                     else
                     {
@@ -88,6 +101,9 @@ public class CameraSway : MonoBehaviour
                         timer = 0;
                         right = false;
                         up = true;
+                        // footstep sounds here
+                        if (isMirror)
+                            footstepScript.walking = true;
                     }
                     else
                     {

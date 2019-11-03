@@ -4927,6 +4927,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2580643967342053776}
+  - component: {fileID: 5172525645543069646}
   m_Layer: 0
   m_Name: MirrorHolder
   m_TagString: Untagged
@@ -4949,6 +4950,20 @@ Transform:
   m_Father: {fileID: 8657538490448255359}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5172525645543069646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 222749944836904597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51ad824f6910c9e4ab2064272ce87cc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  footstepScript: {fileID: 1169219452065940832}
 --- !u!1 &1937731009292456948
 GameObject:
   m_ObjectHideFlags: 0
@@ -4959,6 +4974,7 @@ GameObject:
   m_Component:
   - component: {fileID: 47100333747674027}
   - component: {fileID: 9211002818401222222}
+  - component: {fileID: 1169219452065940832}
   m_Layer: 0
   m_Name: FootstepAudioSource
   m_TagString: Untagged
@@ -4994,7 +5010,7 @@ AudioSource:
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -5076,6 +5092,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1169219452065940832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1937731009292456948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8668ab086cd3724fa417417b19d7535, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  footsteps:
+  - {fileID: 8300000, guid: b694060898e1bab4687c0864228e3d5f, type: 3}
+  walking: 0
 --- !u!1 &6863615973704894360
 GameObject:
   m_ObjectHideFlags: 0
@@ -5121,6 +5152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+  footstepScript: {fileID: 1169219452065940832}
 --- !u!1 &8657538490448255354
 GameObject:
   m_ObjectHideFlags: 0
@@ -5412,14 +5444,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sounds:
-  - {fileID: 8300000, guid: 566b925e3769cde469ddc349c167fe68, type: 3}
-  - {fileID: 8300000, guid: a1a367466acf4834d82eea7709f43647, type: 3}
-  - {fileID: 8300000, guid: 7c1ae512dc9375b4d830fcfdf6698242, type: 3}
-  - {fileID: 8300000, guid: 8693ba530f9f27746a8635849657cf31, type: 3}
-  - {fileID: 8300000, guid: c91e46880fe348d4b9fe78a09ae82ed4, type: 3}
-  footStepSource: {fileID: 9211002818401222222}
-  footsteps:
-  - {fileID: 8300000, guid: 111c19a6a8996f64897753d4a0c5bddc, type: 3}
+  - {fileID: 8300000, guid: 03a7826f16fac9a41b06e6fe0ab12f56, type: 3}
+  - {fileID: 8300000, guid: e265ffc7f13c8304295fc4ef4d5d4dd4, type: 3}
+  - {fileID: 8300000, guid: 14c43c789ed61694a9f0b46115ca2804, type: 3}
+  - {fileID: 8300000, guid: cdf11767a83c3d64c828d32a5dfab8c0, type: 3}
+  - {fileID: 8300000, guid: 0453e7767de775046adab3ad7a651300, type: 3}
 --- !u!82 &4775293440264193371
 AudioSource:
   m_ObjectHideFlags: 0
