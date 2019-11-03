@@ -73,6 +73,7 @@ public class PlayerMovement : MonoBehaviour
             // play spooky sound
             // aww ty jacob
             spookSource.Play();
+            Debug.Log("ded");
             canMove = false;
             Cursor.lockState = CursorLockMode.None;
             StartCoroutine(WaitForSpookSound());
