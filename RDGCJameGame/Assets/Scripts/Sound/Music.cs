@@ -95,13 +95,20 @@ public class Music : MonoBehaviour
 
     private void Awake()
     {
-        musicManagerList = GameObject.FindGameObjectsWithTag("music");
+        //musicManagerList = GameObject.FindGameObjectsWithTag("music");
+        //
+        //if(musicManagerList.Length>1)
+        //{
+        //    Destroy(this.gameObject);
+        //}
 
-        if(musicManagerList.Length>1)
+        if (!(GameObject.FindGameObjectWithTag("music") != this.gameObject))
+        {
+            DontDestroyOnLoad(this.gameObject);
+        }
+        else
         {
             Destroy(this.gameObject);
         }
-        DontDestroyOnLoad(this.gameObject);
-
     }
 }
