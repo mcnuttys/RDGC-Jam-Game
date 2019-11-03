@@ -12,16 +12,33 @@ public class Enemy : MonoBehaviour
     public float movementSpeed = 1.5f;
     private float timer;
 
+    private Footstep footstepScript;
+    private Vector3 prevPosition;
+    private bool coroutinesStopped;
+
     // Start is called before the first frame update
     void Start()
     {
         nav = GetComponent<NavMeshAgent>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
+        footstepScript = this.GetComponent<Footstep>();
+        StartCoroutine(WaitForFootstep(1));
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (prevPosition != transform.position && coroutinesStopped)
+        {
+            StartCoroutine(WaitForFootstep(1));
+            coroutinesStopped = false;
+        }
+        if (prevPosition == transform.position)
+        {
+            StopAllCoroutines();
+            coroutinesStopped = true;
+        }
+
         if(GetComponentInChildren<MeshRenderer>().isVisible)
         {
             Debug.DrawRay(transform.position, player.position - transform.position, Color.red);
@@ -45,5 +62,14 @@ public class Enemy : MonoBehaviour
 
         if (timer > 0)
             timer -= Time.deltaTime;
+
+        prevPosition = transform.position;
+    }
+
+    IEnumerator WaitForFootstep(float stepInterval)
+    {
+        yield return new WaitForSeconds(stepInterval);
+        footstepScript.walking = true;
+        StartCoroutine(WaitForFootstep(stepInterval));
     }
 }
