@@ -22,6 +22,10 @@ public class FinalDoor : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        SceneManager.LoadScene(2); //win screen
+        if (win)
+        {
+            Cursor.lockState = CursorLockMode.None;
+            SceneManager.LoadScene(2); //win screen
+        }
     }
 }
