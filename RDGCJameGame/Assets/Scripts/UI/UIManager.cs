@@ -29,7 +29,7 @@ public class UIManager : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
-    {
+    {   
         //Sets the initial state of the keys
         keyManager = player.GetComponent<KeyManager>();
 
@@ -50,6 +50,18 @@ public class UIManager : MonoBehaviour
     {
         if(player != null)
             UpdateCollect();
+
+        //Creates the raycast
+        Ray r = Camera.main.ViewportPointToRay(Input.mousePosition);
+        RaycastHit hit;
+
+        if (Physics.Raycast(Camera.main.transform.position, r.direction * 10, out hit))
+        {
+            if(hit.collider.gameObject.name == "Lantern Trigger")
+            {
+
+            }
+        }
     }
 
     //Play button related methods
