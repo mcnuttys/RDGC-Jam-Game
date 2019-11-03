@@ -57,68 +57,66 @@ public class UIManager : MonoBehaviour
         if(player != null)
             UpdateCollect();
 
-        //Creates the raycast
-        Ray r = Camera.main.ScreenPointToRay(Input.mousePosition);
-        Debug.Log(r.origin + " | " + r.direction + " | " + Input.mousePosition);
-
-        RaycastHit hit;
-        
-        if (Physics.Raycast(r, out hit))
+        if (playText != null && howText != null && exitText != null && howPanel != null)
         {
-            Debug.Log(hit.transform);
-            Debug.Log(hit.point);
+            //Creates the raycast
+            Ray r = Camera.main.ScreenPointToRay(Input.mousePosition);
+            
+            RaycastHit hit;
 
-            Debug.Log(hit.collider);
-            Debug.DrawLine(r.origin, hit.point, Color.red);
-           //Tests if the latern is being interacted with
-           if(hit.collider.gameObject.name == "Lantern Trigger")
+            if (Physics.Raycast(r, out hit))
             {
-                Debug.Log("Lantern");
-                //Plays the game
-                if (Input.GetMouseButtonDown(0))
+                Debug.DrawLine(r.origin, hit.point, Color.red);
+                //Tests if the latern is being interacted with
+                if (hit.collider.gameObject.name == "Lantern Trigger")
                 {
-                    Play();
+                    Debug.Log("Lantern");
+                    //Plays the game
+                    if (Input.GetMouseButtonDown(0))
+                    {
+                        Play();
+                    }
+
+                    OnHoverPlay();
                 }
-        
-                OnHoverPlay();
-            }
-            else
-            {
-                OffHoverPlay();
-            }
-        
-            //Tests if the key is being interacted with
-            if(hit.collider.gameObject.name == "Key Trigger")
-            {
-                Debug.Log("Key");
-                //Exits the game
-                if (Input.GetMouseButtonDown(0))
+                else
                 {
-                    ExitClick();
+                    OffHoverPlay();
                 }
-        
-                OnHoverExit();
-            }
-            else
-            {
-                OffHoverExit();
-            }
-        
-            //Tests if the mirror is being interacted with
-            if(hit.collider.gameObject.name == "Mirror Trigger")
-            {
-                Debug.Log("Mirror");
-                //Switches to the how to menu
-                if (Input.GetMouseButtonDown(0))
+
+                //Tests if the key is being interacted with
+                if (hit.collider.gameObject.name == "Key Trigger")
                 {
-                    HowClick();
+                    Debug.Log("Key");
+                    //Exits the game
+                    if (Input.GetMouseButtonDown(0))
+                    {
+                        ExitClick();
+                    }
+
+                    OnHoverExit();
                 }
-        
-                OnHoverHow();
-            }
-            else
-            {
-                OffHoverHow();
+                else
+                {
+                    OffHoverExit();
+                }
+
+                //Tests if the mirror is being interacted with
+                if (hit.collider.gameObject.name == "Mirror Trigger")
+                {
+                    Debug.Log("Mirror");
+                    //Switches to the how to menu
+                    if (Input.GetMouseButtonDown(0))
+                    {
+                        HowClick();
+                    }
+
+                    OnHoverHow();
+                }
+                else
+                {
+                    OffHoverHow();
+                }
             }
         }
     }
