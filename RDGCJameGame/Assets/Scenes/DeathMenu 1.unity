@@ -5297,6 +5297,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 2909052660541022748, guid: 6f4de202c5c9c454a9d894516e19cf36,
+        type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f4de202c5c9c454a9d894516e19cf36, type: 3}
 --- !u!224 &809757510 stripped
@@ -5337,7 +5342,6 @@ MonoBehaviour:
   collectImage: []
   player: {fileID: 0}
   fadeScript: {fileID: 0}
-  playText: {fileID: 0}
   playText: {fileID: 1707880522}
   howText: {fileID: 0}
   exitText: {fileID: 442009857}
