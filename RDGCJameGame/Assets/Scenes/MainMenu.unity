@@ -4213,7 +4213,7 @@ GameObject:
   - component: {fileID: 2041561844}
   m_Layer: 0
   m_Name: MusicManager
-  m_TagString: Untagged
+  m_TagString: music
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4230,6 +4230,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 676ec4e5f9b8f06439a53270d3375313, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  musicManagerList: []
+  currentScene:
+    m_Handle: 0
+  endPlaying: 0
+  mainPlaying: 0
   mainPlayer: {fileID: 2041561846}
   endPlayer: {fileID: 2041561845}
   timer: 0
