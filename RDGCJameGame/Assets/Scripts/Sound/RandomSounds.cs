@@ -41,11 +41,10 @@ public class RandomSounds : MonoBehaviour
                                         0,
                                         Random.Range(0, 136f));
         transform.position = randomPos;
-        Debug.Log("Playing a sound!");
         source.Play();
 
         // The start the coroutine again
-        StartCoroutine(PlaySoundAtInterval(Random.Range(4.75f, 11.75f)));
+        StartCoroutine(PlaySoundAtInterval(Random.Range(8, 16)));
     }
 
 }
