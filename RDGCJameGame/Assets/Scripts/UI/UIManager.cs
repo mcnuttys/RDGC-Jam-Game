@@ -158,7 +158,7 @@ public class UIManager : MonoBehaviour
     //Click Events
     public void HowClick()
     {
-        howPanel.SetActive(true);
+        fadeScript.FadeToScene(4);
     }
 
     //Exit button related methods
