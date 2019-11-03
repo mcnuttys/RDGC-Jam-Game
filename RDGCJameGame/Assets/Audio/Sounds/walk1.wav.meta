@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< Updated upstream
 guid: 27c3e7ddb9844154c8411f70bf688baa
-=======
-guid: eec04684503b61440977d249d3041245
->>>>>>> Stashed changes
 AudioImporter:
   externalObjects: {}
   serializedVersion: 6
@@ -15,11 +11,7 @@ AudioImporter:
     quality: 1
     conversionMode: 0
   platformSettingOverrides: {}
-<<<<<<< Updated upstream
-  forceToMono: 0
-=======
   forceToMono: 1
->>>>>>> Stashed changes
   normalize: 1
   preloadAudioData: 1
   loadInBackground: 0
