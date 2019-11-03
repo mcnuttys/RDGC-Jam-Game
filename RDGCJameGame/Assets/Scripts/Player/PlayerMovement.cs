@@ -67,7 +67,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void TestEnemyDistance()
     {
-        if(Vector3.Distance(transform.position, enemy.transform.position) < 1.5f && !soundPlaying)
+        if(Vector3.Distance(transform.position, enemy.transform.position) < 1.6f && !soundPlaying)
         {
             soundPlaying = true;
             // play spooky sound
