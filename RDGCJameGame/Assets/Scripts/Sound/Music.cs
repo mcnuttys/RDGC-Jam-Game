@@ -5,10 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class Music : MonoBehaviour
 {
-    GameObject[] musicManagerList;
-    Scene currentScene;
-    bool endPlaying;
-    bool mainPlaying;
+    public GameObject[] musicManagerList;
+    public Scene currentScene;
+    public bool endPlaying;
+    public bool mainPlaying;
     public AudioSource mainPlayer;
     public AudioSource endPlayer;
     public float timer;
@@ -72,6 +72,7 @@ public class Music : MonoBehaviour
         }
         else if (currentIndex == 1)
         {
+            endPlaying = false;
             mainPlaying = false;
             if (mainPlayer.volume > 0)
             {
