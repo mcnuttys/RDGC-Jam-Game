@@ -12,6 +12,7 @@ public class UIManager : MonoBehaviour
     private KeyManager keyManager;
     public Image[] collectImage;
     public GameObject player;
+    public ScreenFade fadeScript;
 
     //Text related gameObjects
     [SerializeField]
@@ -29,7 +30,9 @@ public class UIManager : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
-    {   
+    {
+        fadeScript = GameObject.FindObjectOfType<ScreenFade>();
+
         //Sets the initial state of the keys
         if(player != null)
             keyManager = player.GetComponent<KeyManager>();
@@ -70,7 +73,6 @@ public class UIManager : MonoBehaviour
                 //Tests if the latern is being interacted with
                 if (hit.collider.gameObject.name == "Lantern Trigger")
                 {
-                    Debug.Log("Lantern");
                     //Plays the game
                     if (Input.GetMouseButtonDown(0))
                     {
@@ -87,7 +89,6 @@ public class UIManager : MonoBehaviour
                 //Tests if the key is being interacted with
                 if (hit.collider.gameObject.name == "Key Trigger")
                 {
-                    Debug.Log("Key");
                     //Exits the game
                     if (Input.GetMouseButtonDown(0))
                     {
@@ -104,7 +105,6 @@ public class UIManager : MonoBehaviour
                 //Tests if the mirror is being interacted with
                 if (hit.collider.gameObject.name == "Mirror Trigger")
                 {
-                    Debug.Log("Mirror");
                     //Switches to the how to menu
                     if (Input.GetMouseButtonDown(0))
                     {
@@ -139,7 +139,7 @@ public class UIManager : MonoBehaviour
     public void Play()
     {
         Cursor.lockState = CursorLockMode.Locked;
-        SceneManager.LoadScene(1);
+        fadeScript.FadeToScene(1);
     }
 
     //How to button related methods
@@ -193,7 +193,7 @@ public class UIManager : MonoBehaviour
 
     public void ToMain()
     {
-        SceneManager.LoadScene(0);
+        fadeScript.FadeToScene(0);
     }
 
     void UpdateCollect()

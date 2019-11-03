@@ -1,12 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class ScreenFade : MonoBehaviour
 {
     public float fadeSpeed = 0.5f;
-    public SpriteRenderer fade;
+    public Image fade;
     public Color finalColor;
 
     private bool fading;
@@ -20,20 +21,20 @@ public class ScreenFade : MonoBehaviour
             fade.color = Color.Lerp(fade.color, finalColor, Time.deltaTime * fadeSpeed);
 
             if (fade.color == finalColor)
+            {
                 CompleteFade(sceneToLoad);
+            }
         }
     }
 
-    void Fade(int sceneToLoad)
+    public void FadeToScene(int index)
     {
         fading = true;
-        this.sceneToLoad = sceneToLoad;
+        sceneToLoad = index;
     }
 
     void CompleteFade(int sceneToLoad)
     {
-
-        Debug.Log($"Loading Scene: {SceneManager.GetSceneAt(sceneToLoad).name}");
         SceneManager.LoadScene(sceneToLoad);
     }
 }
