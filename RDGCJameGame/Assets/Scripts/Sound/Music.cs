@@ -35,7 +35,7 @@ public class Music : MonoBehaviour
             endPlaying = false;
             if (endPlayer.volume > 0)
             {
-                endPlayer.volume -= .01f;
+                endPlayer.volume *= .9925f;
             }
             else
             {
@@ -53,6 +53,17 @@ public class Music : MonoBehaviour
                 timer += Time.deltaTime;
             }
         }
+        else if (currentIndex == 0 || currentIndex == 2)
+        {
+            if (endPlayer.volume > 0)
+            {
+                endPlayer.volume *= .9925f;
+            }
+            else
+            {
+                endPlayer.Stop();
+            }
+        }
         else if (currentIndex == 3 && !endPlaying)
         {
             endPlaying = true;
@@ -64,11 +75,19 @@ public class Music : MonoBehaviour
             mainPlaying = false;
             if (mainPlayer.volume > 0)
             {
-                mainPlayer.volume -= .01f;
+                mainPlayer.volume *= .9925f;
             }
             else
             {
                 mainPlayer.Stop();
+            }
+            if (endPlayer.volume > 0)
+            {
+                endPlayer.volume *= .9925f;
+            }
+            else
+            {
+                endPlayer.Stop();
             }
         }
     }
