@@ -31,7 +31,8 @@ public class UIManager : MonoBehaviour
     void Start()
     {   
         //Sets the initial state of the keys
-        keyManager = player.GetComponent<KeyManager>();
+        if(player != null)
+            keyManager = player.GetComponent<KeyManager>();
 
         for(int i = 0; i < collectImage.Length; i++)
         {
@@ -39,10 +40,15 @@ public class UIManager : MonoBehaviour
         }
 
         //Set initial screens
-        playText.SetActive(false);
-        howText.SetActive(false);
-        exitText.SetActive(false);
-        howPanel.SetActive(false);
+
+        if(playText != null && howText != null && exitText != null && howPanel != null)
+        {
+            playText.SetActive(false);
+            howText.SetActive(false);
+            exitText.SetActive(false);
+            howPanel.SetActive(false);
+        }
+
     }
 
     // Update is called once per frame
@@ -52,14 +58,67 @@ public class UIManager : MonoBehaviour
             UpdateCollect();
 
         //Creates the raycast
-        Ray r = Camera.main.ViewportPointToRay(Input.mousePosition);
+        Ray r = Camera.main.ScreenPointToRay(Input.mousePosition);
+        Debug.Log(r.origin + " | " + r.direction + " | " + Input.mousePosition);
+
         RaycastHit hit;
-
-        if (Physics.Raycast(Camera.main.transform.position, r.direction * 10, out hit))
+        
+        if (Physics.Raycast(r, out hit))
         {
-            if(hit.collider.gameObject.name == "Lantern Trigger")
-            {
+            Debug.Log(hit.transform);
+            Debug.Log(hit.point);
 
+            Debug.Log(hit.collider);
+            Debug.DrawLine(r.origin, hit.point, Color.red);
+           //Tests if the latern is being interacted with
+           if(hit.collider.gameObject.name == "Lantern Trigger")
+            {
+                Debug.Log("Lantern");
+                //Plays the game
+                if (Input.GetMouseButtonDown(0))
+                {
+                    Play();
+                }
+        
+                OnHoverPlay();
+            }
+            else
+            {
+                OffHoverPlay();
+            }
+        
+            //Tests if the key is being interacted with
+            if(hit.collider.gameObject.name == "Key Trigger")
+            {
+                Debug.Log("Key");
+                //Exits the game
+                if (Input.GetMouseButtonDown(0))
+                {
+                    ExitClick();
+                }
+        
+                OnHoverExit();
+            }
+            else
+            {
+                OffHoverExit();
+            }
+        
+            //Tests if the mirror is being interacted with
+            if(hit.collider.gameObject.name == "Mirror Trigger")
+            {
+                Debug.Log("Mirror");
+                //Switches to the how to menu
+                if (Input.GetMouseButtonDown(0))
+                {
+                    HowClick();
+                }
+        
+                OnHoverHow();
+            }
+            else
+            {
+                OffHoverHow();
             }
         }
     }
@@ -74,6 +133,7 @@ public class UIManager : MonoBehaviour
 
     public void OffHoverPlay()
     {
+        if(playText != null)
         playText.SetActive(false);
     }
 
