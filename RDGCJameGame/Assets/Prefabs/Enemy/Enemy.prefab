@@ -4861,10 +4861,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   footsteps:
-  - {fileID: 8300000, guid: 27c3e7ddb9844154c8411f70bf688baa, type: 3}
   - {fileID: 8300000, guid: b694060898e1bab4687c0864228e3d5f, type: 3}
-  - {fileID: 8300000, guid: a5897149dcd50a54982b917271ecb17f, type: 3}
-  - {fileID: 8300000, guid: 625625bac7ec9d3498c51b843326d47f, type: 3}
   walking: 0
 --- !u!82 &6057846094123475016
 AudioSource:
