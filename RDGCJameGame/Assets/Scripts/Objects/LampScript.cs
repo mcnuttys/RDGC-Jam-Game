@@ -19,36 +19,41 @@ public class LampScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        if (GameObject.FindGameObjectWithTag("Player") != null)
+            player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Vector3.Distance(transform.position, player.position) < visibilityRange && !Physics.CheckBox(transform.position + checkBox.center, checkBox.size/4))
+        if (player != null)
         {
-            if (!lanternObject.activeSelf)
-                lanternObject.SetActive(true);
-            
-        } else
-        {
-            if (lanternObject.activeSelf)
-                lanternObject.SetActive(false);
-        }
+            if (Vector3.Distance(transform.position, player.position) < visibilityRange && !Physics.CheckBox(transform.position + checkBox.center, checkBox.size / 4))
+            {
+                if (!lanternObject.activeSelf)
+                    lanternObject.SetActive(true);
 
-        if(flickerTimer <= 0)
-        {
-            lightObject.SetActive(false);
-            flickerTimer = Random.Range(flickerTimerRange.x, flickerTimerRange.y);
-        }
+            }
+            else
+            {
+                if (lanternObject.activeSelf)
+                    lanternObject.SetActive(false);
+            }
 
-        if (flickerTimer < Random.Range(0, Random.Range(offTime.x, offTime.y)))
-        {
-            lightObject.SetActive(true);
-        }
+            if (flickerTimer <= 0)
+            {
+                lightObject.SetActive(false);
+                flickerTimer = Random.Range(flickerTimerRange.x, flickerTimerRange.y);
+            }
 
-        if (flickerTimer > 0)
-            flickerTimer -= Time.deltaTime;
+            if (flickerTimer < Random.Range(0, Random.Range(offTime.x, offTime.y)))
+            {
+                lightObject.SetActive(true);
+            }
+
+            if (flickerTimer > 0)
+                flickerTimer -= Time.deltaTime;
+        }
     }
 
     private void OnDrawGizmos()
