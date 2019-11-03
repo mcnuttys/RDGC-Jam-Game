@@ -8,7 +8,6 @@ public class Footprints : MonoBehaviour
     public double timer;
     public double maxTime = 1;
     public GameObject parent;
-    public GameObject walker;
     public Vector3 previousPosition;
     // Start is called before the first frame update
     void Start()
