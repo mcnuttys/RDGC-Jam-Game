@@ -3174,7 +3174,7 @@ PrefabInstance:
     - target: {fileID: 5304811026390363493, guid: 1e4d42ac73c763444a04a3116b2379de,
         type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 5304811026390363493, guid: 1e4d42ac73c763444a04a3116b2379de,
         type: 3}
@@ -11115,7 +11115,7 @@ Transform:
   - {fileID: 335505670}
   - {fileID: 212783755}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 180, y: 0, z: 0}
 --- !u!1 &200434772
 GameObject:
@@ -32693,7 +32693,7 @@ PrefabInstance:
     - target: {fileID: 5304811026390363493, guid: 1e4d42ac73c763444a04a3116b2379de,
         type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 5304811026390363493, guid: 1e4d42ac73c763444a04a3116b2379de,
         type: 3}
@@ -38815,8 +38815,6 @@ MonoBehaviour:
   howText: {fileID: 0}
   exitText: {fileID: 0}
   howPanel: {fileID: 0}
-  vicPanel: {fileID: 0}
-  deathPanel: {fileID: 0}
 --- !u!4 &744561391
 Transform:
   m_ObjectHideFlags: 0
@@ -51853,6 +51851,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Door
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 6ba2b67b4f2247445a9c27073642ecf0,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 6ba2b67b4f2247445a9c27073642ecf0,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -51942,8 +51945,22 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.1, y: 0.121861145, z: 0.06650561}
+  m_Size: {x: 0.1, y: 0.1, z: 0.1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1019563448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1019563443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0a77b1edd8a4f64c9aa6ba61b1bd12c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 707313953}
+  win: 0
 --- !u!1 &1022352503
 GameObject:
   m_ObjectHideFlags: 0
