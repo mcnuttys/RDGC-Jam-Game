@@ -14,6 +14,9 @@ public class UIManager : MonoBehaviour
     public GameObject player;
     public ScreenFade fadeScript;
 
+    [SerializeField]
+    private Animator lightChange;
+
     //Text related gameObjects
     [SerializeField]
     private GameObject playText;
@@ -51,6 +54,10 @@ public class UIManager : MonoBehaviour
             exitText.SetActive(false);
             howPanel.SetActive(false);
         }
+
+        //Set the animator
+        if (lightChange != null)
+            lightChange.SetBool("PlayHover", false);
 
     }
 
@@ -127,12 +134,18 @@ public class UIManager : MonoBehaviour
     public void OnHoverPlay()
     {
         playText.SetActive(true);
+
+        if(lightChange != null)
+            lightChange.SetBool("PlayHover", true);
     }
 
     public void OffHoverPlay()
     {
         if(playText != null)
         playText.SetActive(false);
+
+        if(lightChange != null)
+            lightChange.SetBool("PlayHover", false);
     }
 
     //Click Events
