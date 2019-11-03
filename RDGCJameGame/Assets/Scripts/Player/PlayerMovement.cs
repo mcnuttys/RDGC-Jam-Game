@@ -15,11 +15,18 @@ public class PlayerMovement : MonoBehaviour
     public float movementSpeed = 3;
     public float jumpSpeed = 3;
 
+    private bool canMove;
+    private AudioSource spookSource;
+    private bool soundPlaying;
+
     // Start is called before the first frame update
     void Start()
     {
         moving = false;
         cc = GetComponent<CharacterController>();
+        canMove = true;
+        spookSource = GetComponent<AudioSource>();
+        soundPlaying = false;
     }
 
     // Update is called once per frame
@@ -42,6 +49,7 @@ public class PlayerMovement : MonoBehaviour
             moving = false;
         }
 
+        TestEnemyDistance();
     }
 
     void FixedUpdate()
@@ -53,16 +61,27 @@ public class PlayerMovement : MonoBehaviour
             verticalSpeed += Physics.gravity.y * Time.deltaTime;
 
         move *= Time.deltaTime;
-        cc.Move(move);
+        if (canMove)
+            cc.Move(move);
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void TestEnemyDistance()
     {
-        if(collision.gameObject == enemy)
+        if(Vector3.Distance(transform.position, enemy.transform.position) < 1.6f && !soundPlaying)
         {
+            soundPlaying = true;
             // play spooky sound
+            // aww ty jacob
+            spookSource.Play();
+            canMove = false;
             Cursor.lockState = CursorLockMode.None;
-            SceneManager.LoadScene(3); //dead screen
+            StartCoroutine(WaitForSpookSound());
         }
+    }
+
+    IEnumerator WaitForSpookSound()
+    {
+        yield return new WaitForSeconds(spookSource.clip.length);
+        SceneManager.LoadScene(3); //dead screen
     }
 }
